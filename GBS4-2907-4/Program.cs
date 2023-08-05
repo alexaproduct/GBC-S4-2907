@@ -23,13 +23,35 @@ for (int i = 0; i <= 7; i++)
 }
 Console.WriteLine();
 
-int temp = 0;
-int temp2 = arr[0];
+// Только для случаев, если один 0 в массиве:
 
-for (int i = 0; i <= 6; i++)
+int temp = 0;
+int temp2 = 0;
+int k = 0;
+
+for (int i = 0; i <= 7; i++)
 {
-    temp = temp2;
-    temp2 = arr[i+1];
-    arr[i+1] = temp;
+    if (arr[i] == 0)
+    {
+        temp = arr[0];
+        temp2 = temp;
+        arr[0] = arr[i];
+        arr[i] = arr[i-1];
+        k = i;
+    }
+}
+
+if (arr[0] == 0)
+{
+    for (int i = 1; i <= k-1; i++)
+    {
+        temp = temp2;
+        temp2 = arr[i];
+        arr[i] = temp;
+    }
+}
+
+for (int i = 0; i <= 7; i++)
+{
     Console.WriteLine(arr[i]);
 }
