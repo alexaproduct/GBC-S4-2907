@@ -90,8 +90,6 @@ string[,] matrix = new string[5, 5];
 PrintArray(matrix);
 Console.WriteLine();
 FillArray(matrix);
-Console.WriteLine();
-PrintArray(matrix);
 
 /*
 void FillArray(string[,] matrix)
